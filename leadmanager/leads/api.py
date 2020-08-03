@@ -1,12 +1,13 @@
-from .models import Lead
+from leads.models import Lead
 from rest_framework import viewsets, permissions
 from .serializers import LeadSerializer
 
-#Lead Viewer
+# Lead Viewset
+
 
 class LeadViewSet(viewsets.ModelViewSet):
     permission_classes = [
-        permissions.IsAuthenticated
+        permissions.IsAuthenticated,
     ]
     serializer_class = LeadSerializer
 
